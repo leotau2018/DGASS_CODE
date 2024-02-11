@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- Copyright IBM Corporation 2013. All Rights Reserved. -->
+<!-- Example VMC file for two workers to which the master
+     connects via the process transport. By default this configuration
+     will just create two new processes on the local machine.
+-->
+<vmc>
+  <machine name="machine1">
+    <transport type="process">
+      <cmdline>
+        <item value="$(CPLEX_STUDIO_DIR)/cplex/bin/x64_win64/cplex.exe"/>
+        <item value="-worker=process"/>
+        <item value="-libpath=$(CPLEX_STUDIO_DIR)/cplex/bin/x64_win64"/>
+      </cmdline>
+    </transport>
+  </machine>
+  <machine name="machine2">
+    <transport type="process">
+      <cmdline>
+        <item value="$(CPLEX_STUDIO_DIR)/cplex/bin/x64_win64/cplex.exe"/>
+        <item value="-worker=process"/>
+        <item value="-libpath=$(CPLEX_STUDIO_DIR)/cplex/bin/x64_win64"/>
+      </cmdline>
+    </transport>
+  </machine>
+</vmc>
